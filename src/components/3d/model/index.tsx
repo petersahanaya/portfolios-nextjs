@@ -8,15 +8,15 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 function Model(props: any) {
   const result = useLoader(GLTFLoader, "/shiba.glb");
 
-  return <primitive object={result.scene} />;
+  return <primitive object={result.scene} scale={[3, 3, 3]} />;
 }
 
 function Container() {
   return (
-    <Canvas camera={{ position: [-5, 20, -15], fov: 22 }}>
+    <Canvas camera={{ position: [-5, 20, -15], fov: 27 }}>
       <pointLight position={[10, 10, 40]} intensity={1.5} />
       <Suspense fallback={null}>
-        <group rotation={[0, Math.PI, 0]} position={[0, 1, 0]}>
+        <group rotation={[0, Math.PI, 0]} position={[0, 3.5, 0]}>
           <Model />
         </group>
         <Environment preset="studio" />
