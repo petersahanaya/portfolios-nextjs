@@ -10,6 +10,7 @@ function Model(props: any) {
   const dracoLoader = useMemo(() => new DRACOLoader(), []); // Create an instance of DRACOLoader
 
   const result = useLoader(GLTFLoader, "/girl_statue.glb", (loader) => {
+    dracoLoader.setDecoderPath("/draco/");
     loader.setDRACOLoader(dracoLoader);
   });
 
