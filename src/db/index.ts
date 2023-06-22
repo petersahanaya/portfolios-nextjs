@@ -103,6 +103,8 @@ export const DBProjects = [
   },
 ];
 
+export type DBProjectType = UnArray<typeof DBProjects>;
+
 type UnArray<T> = T extends Array<infer J> ? J : never;
 
 export type Project = UnArray<typeof DB>;
