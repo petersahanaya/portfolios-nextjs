@@ -1,12 +1,19 @@
 "use client";
 
-import React, { Suspense } from "react";
+import React, { Suspense, useMemo } from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
 import { Environment, ContactShadows, OrbitControls } from "@react-three/drei";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 function Model(props: any) {
-  const result = useLoader(GLTFLoader, "/girl_statue.glb");
+  const dracoLoader = useMemo(() => new DRACOLoader(), []); // Create an instance of DRACOLoader
+
+  const result = useLoader(GLTFLoader, "/girl_statue.glb", (loader) => {
+    // Pass GLTFLoader and the loader callback
+    dracoLoader.setDecoderPath("/path/to/draco/"); // Set the path to the Draco decoder
+    loader.setDRACOLoader(dracoLoader); // Set the DRACOLoader instance for GLTFLoader
+  });
 
   return <primitive object={result.scene} />;
 }
