@@ -15,7 +15,6 @@ export const metadata: Metadata = {
       url: "https://linkedin.com/in/peter-sahanaya",
     },
   ],
-  icons : ""
 };
 
 const antonio = Montserrat({
