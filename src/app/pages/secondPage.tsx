@@ -1,6 +1,6 @@
 "use client";
 
-import ArrowIcon from "@/components/icons/arrow";
+import ArrowIcon from "@icon/arrow";
 import { DB, Project } from "@/db";
 import { useIntersection } from "@hooks/inView";
 import { useInView } from "framer-motion";

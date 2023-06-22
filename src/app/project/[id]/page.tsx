@@ -4,17 +4,36 @@ import ArrowIcon from "@icon/arrow";
 import Slider from "@component/slider";
 import { DBProjects } from "@/db";
 import { useState } from "react";
-import NextJsIcon from "@/components/icons/nextjs";
-import NodeJsIcon from "@/components/icons/nodejs";
-import TypescriptIcon from "@/components/icons/typescript";
+import NextJsIcon from "@icon/nextjs";
+import TypescriptIcon from "@icon/typescript";
+import NodeJsIcon from "@icon/nodejs";
 import { motion } from "framer-motion";
 import { StaggerAnimation, fadeInRight, fadeInUp } from "@/animation/stagger";
+import { Metadata, ResolvingMetadata } from "next";
 
 type ProjectIdProps = {
   params: {
     id?: string;
   };
 };
+
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent?: ResolvingMetadata
+): Promise<Metadata> {
+  const project = DBProjects.find((project) => project.id === params.id)!;
+
+  return {
+    title: project.title,
+    keywords: project.techStack.join(" - "),
+    description: project.description,
+  };
+}
 
 const ProjectId = ({ params }: ProjectIdProps) => {
   const project = DBProjects.find((project) => project.id === params.id)!;
