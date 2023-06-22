@@ -15,7 +15,7 @@ const FirstPage = () => {
     <main
       id="home"
       ref={ref}
-      className="w-screen h-full sm:h-screen snap-center bg-stone-900 overflow-hidden text-xs uppercase pt-6"
+      className="w-screen h-full sm:h-screen snap-center bg-stone-900 text-xs uppercase pt-6"
     >
       <FirstPageArticle />
     </main>
@@ -44,7 +44,7 @@ function FirstPageArticle() {
       variants={StaggerAnimation(0.12, 0)}
       initial="hidden"
       animate="visible"
-      className="sm:px-14 px-10 py-8 grid md2:grid-cols-2 grid-cols-1 justify-items-center w-full h-full"
+      className="sm:px-14 px-10 py-8 flex md2:flex-row flex-col-reverse justify-around items-center w-full h-full mt-[-4rem] xs:mt-[-6rem] sm:mt-[-2rem] md2:px-20"
     >
       <section className="text-orange-50 w-full md2:w-full xs:mt-20 mt-8">
         <motion.article
@@ -125,7 +125,7 @@ function FirstPageArticle() {
           </motion.section>
         </motion.article>
       </section>
-      <section className="w-full translate-y-28 hidden md2:inline-block">
+      <section className="w-full h-full translate-y-20 xs:translate-y-28 md2:h-full flex justify-center items-center md2:translate-y-28 sm:hidden md2:flex">
         <Container />
       </section>
     </motion.article>

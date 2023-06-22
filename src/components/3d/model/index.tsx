@@ -2,18 +2,31 @@
 
 import React, { Suspense } from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
+import { useMediaQuery } from "react-responsive";
 import { Environment, ContactShadows, OrbitControls } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 function Model(props: any) {
   const result = useLoader(GLTFLoader, "/shiba.glb");
+  const isLargePhone = useMediaQuery({ maxWidth: 640 });
+  const isMediumLaptop = useMediaQuery({ maxWidth: 2440 });
 
-  return <primitive object={result.scene} scale={[3, 3, 3]} />;
+  const scaleFactor = isLargePhone ? 5 : isMediumLaptop ? 3.2 : 2.8;
+
+  return (
+    <primitive
+      object={result.scene}
+      scale={[scaleFactor, scaleFactor, scaleFactor]}
+    />
+  );
 }
 
 function Container() {
   return (
-    <Canvas camera={{ position: [-5, 20, -15], fov: 27 }}>
+    <Canvas
+      className="w-full h-full"
+      camera={{ position: [-5, 20, -15], fov: 27 }}
+    >
       <pointLight position={[10, 10, 40]} intensity={1.5} />
       <Suspense fallback={null}>
         <group rotation={[0, Math.PI, 0]} position={[0, 3.5, 0]}>
