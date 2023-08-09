@@ -1,19 +1,14 @@
-# Portfolio
+![Cover Image](https://github.com/petersahanaya/portfolios-nextjs/assets/114085979/15393d45-c688-4daf-8c11-a0570994bde4)
 
-This is my portfolio showcasing my projects and skills. It is built using Next.js, TypeScript, and Three.js.
+### 👕 Personal Profile 
+this was my personal website that showcase what i've build so far. I made this website using modern technology.
 
-## Technologies Used
+### 💡 Features
+* Responsive Website
+* Interactive 3D graphics
 
-- [Next.js](https://nextjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Three.js](https://threejs.org/)
+### 🎥 Video Preview 
+[![Video Preview](https://github.com/petersahanaya/portfolios-nextjs/assets/114085979/15393d45-c688-4daf-8c11-a0570994bde4)](https://github.com/petersahanaya/portfolios-nextjs/assets/114085979/9c818d8f-9b13-4ae0-a7ba-3adc96311ae0)
 
-## Description
-
-This portfolio website is developed using Next.js, a React framework for building server-side rendered and statically generated applications. TypeScript is used for static typing, providing improved developer experience and catching potential errors early in the development process. Three.js is utilized to create interactive and visually appealing 3D graphics.
-
-## Features
-
-- Responsive design
-- Projects showcase
-- Interactive 3D graphics
+### 🕹️ Technology 
+Next Js · React Js · Three Js · Tailwind Css · Git
